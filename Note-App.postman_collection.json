@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "46ec6b73-5196-4680-b073-7f2a4d6f2c2f",
+		"name": "Note-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11102014"
+	},
+	"item": [
+		{
+			"name": "Add Notes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ryans/OneDrive/Documents/WhatsApp Image 2022-09-01 at 15.29.47.jpeg",
+							"disabled": true
+						},
+						{
+							"key": "formData",
+							"value": "{\n    \"title\": \"title\",\n    \"description\": \"description\",\n    \"noteType\": \"IMAGE_NOTES\",\n    \"checkBoxes\": null,\n    \"createdBy\": \"Riyan\"\n}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LOCAL}}api/note",
+					"host": [
+						"{{LOCAL}}api"
+					],
+					"path": [
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"title\",\r\n    \"description\": \"description\",\r\n    \"noteType\": \"IMAGE_NOTES\",\r\n    \"checkBoxes\": [\r\n        {\r\n            \"description\": \"checkbox 1\"\r\n        },\r\n        {\r\n            \"description\": \"checkbox 2\"\r\n        }\r\n    ],\r\n    \"createdBy\": \"Riyan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}api/note",
+					"host": [
+						"{{LOCAL}}api"
+					],
+					"path": [
+						"note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Note By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}api/note/1",
+					"host": [
+						"{{LOCAL}}api"
+					],
+					"path": [
+						"note",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Notes",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}api/note/1",
+					"host": [
+						"{{LOCAL}}api"
+					],
+					"path": [
+						"note",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Notes By User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}api/note/user/riyan",
+					"host": [
+						"{{LOCAL}}api"
+					],
+					"path": [
+						"note",
+						"user",
+						"riyan"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LOCAL",
+			"value": "localhost:9000/",
+			"type": "string"
+		}
+	]
+}
